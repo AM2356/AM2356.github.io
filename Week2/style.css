@@ -9,8 +9,9 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #282689;
-    color: #fff;
+    background-color: #46e4dd;
+    color: #f1f1f1c7;
+    font-family: 'Gill Sans' sans-serif;
     text-align: center;
     padding: 20px;
 }
