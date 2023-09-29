@@ -9,6 +9,7 @@ body {
 
 /* Header Styles */
 header {
+    position: fixed;
     background-color: #46e4dd;
     color: #f1f1f1c7;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -16,11 +17,7 @@ header {
     padding: 20px;
 }
 
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
+ 
 
 .headeraH1 {
     margin: 0;
