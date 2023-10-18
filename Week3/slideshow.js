@@ -1,23 +1,27 @@
-let currentIndex = 0;
-const images = [
-    "2.jpeg",
-    "4.jpeg",
-    "5.jpeg",
-    "6.jpeg",
-    "7.jpeg",
-    "8.jpeg",
-    "9.jpeg",
-];
+var slideIndex = 1;
+showSlides(slideIndex);
 
-const interval = 4000;
-function changeImage() {
-    const slide = document.querySelector('.banner-container img[name="slide"]');
-    slide.src = images[currentIndex];
-    currentIndex = (currentIndex + 1) % images.length;
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+
+    // Ensure the slideshow wraps around from the last to the first slide and vice versa
+  if (n > slides.length) {
+    slideIndex = 1;
   }
-  
-function startSlideshow() {
-    setInterval(changeImage, interval);
+  if (n < 1) {
+    slideIndex = slides.length;
   }
 
-document.addEventListener("DOMContentLoaded", startSlideshow);
+    // Hide all slides
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+    // Display the current slide
+  slides[slideIndex - 1].style.display = "block";
+}

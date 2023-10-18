@@ -200,3 +200,67 @@ footer a:hover {
 footer p {
     margin: 10px 0 0;
 }
+
+/* Here's the style for the gallery slideshow */
+/* Apply box-sizing: border-box to all elements */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Style for the images within the slideshow */
+  .slideshow-img {
+    vertical-align: middle;
+    width: 100%;
+  }
+  
+  /* Position the entire container of the slideshow */
+  .container {
+    position: relative;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Style for the cursor when hovering over thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Style for the previous and next buttons (navigation) */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* Style for the previous and next buttons on hover */
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Style for the "number text" (e.g., 1/3) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
