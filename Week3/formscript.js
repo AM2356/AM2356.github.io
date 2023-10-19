@@ -78,7 +78,7 @@ function validateForm() {
         confirmPassError.textContent === ""
     );
 }
-// Function to set denote errors and successes
+// Functions to set denote errors and successes
 function setError(input, errorElement, errorMessage) {
     input.classList.remove("success");
     input.classList.add("error");
