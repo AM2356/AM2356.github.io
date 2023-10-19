@@ -1,4 +1,4 @@
-// Assign variables for form elements and errors
+// Assign constants for form elements and error message placeholders
 const form = document.getElementById("registration-form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
@@ -24,7 +24,7 @@ form.addEventListener("submit", function (e) {
     }
 });
 
-// Validation functions
+// Validation function for username field 
 function validateUsername() {
     if (username.value === "") {
         setError(username, usernameError, "Username is required");
@@ -32,7 +32,7 @@ function validateUsername() {
         setSuccess(username, usernameError);
     }
 }
-
+// Function for Email input field validation
 function validateEmail() {
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (email.value === "") {
@@ -43,7 +43,7 @@ function validateEmail() {
         setSuccess(email, emailError);
     }
 }
-
+// Function for password input field validation
 function validatePassword() {
     if (password.value === "") {
         setError(password, passwordError, "Password is required");
@@ -53,30 +53,32 @@ function validatePassword() {
         setSuccess(password, passwordError);
     }
 }
-
+//Function for password confirmation validation
 function validateConfirmPassword() {
-    if (confirmPassword.value === "") {
-        setError(confirmPassword, confirmPassError, "Confirm Password is required");
-    } else if (confirmPassword.value !== password.value) {
+    if (confirmPassword.value === "") {  //No input for confirm password
+        setError(confirmPassword, confirmPassError, "Please confirm your password");
+    } else if (confirmPassword.value !== password.value) { // Value of confirm password does not match with initial password
         setError(confirmPassword, confirmPassError, "Passwords do not match");
     } else {
         setSuccess(confirmPassword, confirmPassError);
     }
 }
 
+// Function to validate the whole form
 function validateForm() {
     validateUsername();
     validateEmail();
     validatePassword();
     validateConfirmPassword();
     return (
+        //Checking if the error text for these error elements is empty.
         usernameError.textContent === "" &&
         emailError.textContent === "" &&
         passwordError.textContent === "" &&
         confirmPassError.textContent === ""
     );
 }
-
+// Function to set denote errors and successes
 function setError(input, errorElement, errorMessage) {
     input.classList.remove("success");
     input.classList.add("error");
