@@ -34,11 +34,15 @@ btn.addEventListener("click", () => {
       const mainTemperature = data.main.temp;
       const windSpeed = data.wind.speed;
       
-      weatherInfo.innerHTML = `
+      const cityWeatherInfo = document.createElement("div");
+      cityWeatherInfo.innerHTML = `
+        <p>City: ${cityName}</p>
         <p>Weather Description: ${weatherDescription}</p>
         <p>Main Temperature: ${mainTemperature}°C</p>
         <p>Wind Speed: ${windSpeed} m/s</p>
       `;
+      // Append the new city's weather information to the weatherInfo container
+      weatherInfo.appendChild(cityWeatherInfo);
     })
     .catch((error) => {
       if (error.message === "HTTP Status Code Error") {
@@ -47,4 +51,7 @@ btn.addEventListener("click", () => {
         alert("An error occurred while fetching data. Please try again later.");
       }
     });
+
+  // Clear the input field after fetching weather information
+  cityInput.value = "";
 });
